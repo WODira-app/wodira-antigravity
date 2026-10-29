@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "public": {
+      "serverUrl": "https://api.wodira.app/mcp",
+      "oauth": {
+        "clientId": "https://wodira-app.github.io/wodira-antigravity/oauth/antigravity.json"
+      }
+    }
+  }
+}

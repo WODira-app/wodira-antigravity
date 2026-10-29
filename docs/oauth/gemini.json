@@ -1,0 +1,11 @@
+{
+  "client_id": "https://wodira-app.github.io/wodira-antigravity/oauth/gemini.json",
+  "client_name": "WODira for Gemini CLI",
+  "client_uri": "https://wodira-app.github.io/wodira-antigravity/",
+  "logo_uri": "https://wodira-app.github.io/wodira-antigravity/assets/logo.svg",
+  "redirect_uris": ["http://localhost:3334/oauth/callback"],
+  "grant_types": ["authorization_code", "refresh_token"],
+  "response_types": ["code"],
+  "token_endpoint_auth_method": "none",
+  "scope": "openid profile email offline_access organizer:ai"
+}

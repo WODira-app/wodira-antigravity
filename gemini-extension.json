@@ -1,0 +1,26 @@
+{
+  "name": "wodira",
+  "version": "1.0.0",
+  "description": "WODira sports events, athlete activity, event operations and box analytics through the public MCP.",
+  "contextFileName": "rules/AGENTS.md",
+  "mcpServers": {
+    "wodira": {
+      "httpUrl": "https://api.wodira.app/mcp",
+      "oauth": {
+        "enabled": true,
+        "clientId": "https://wodira-app.github.io/wodira-antigravity/oauth/gemini.json",
+        "scopes": [
+          "openid",
+          "profile",
+          "email",
+          "offline_access",
+          "organizer:ai"
+        ],
+        "redirectUri": "http://localhost:3334/oauth/callback",
+        "audiences": [
+          "https://api.wodira.app/mcp"
+        ]
+      }
+    }
+  }
+}

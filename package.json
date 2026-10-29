@@ -1,0 +1,15 @@
+{
+  "name": "wodira-antigravity",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "WODira's public MCP integration for Antigravity and Gemini CLI",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test",
+    "validate": "node --test && agy plugin validate --strict .",
+    "check:mcp": "node scripts/check-mcp.mjs",
+    "check:published": "node scripts/check-published.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

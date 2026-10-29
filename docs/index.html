@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Connect WODira's public MCP to Antigravity and Gemini CLI: events, athlete activity, event operations and box analytics.">
+  <title>WODira · Antigravity &amp; Gemini CLI</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <style>
+    :root{font-family:system-ui,sans-serif;color:#171345;background:#f8f7fc;line-height:1.65;--panel:#fff;--line:#e1ddec;--accent:#d50087}
+    *{box-sizing:border-box}body{margin:0}main{max-width:960px;margin:auto;padding:56px 24px 40px}header{display:flex;align-items:center;gap:22px}header img{width:96px;height:96px}h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.08;letter-spacing:-.04em;margin:.2em 0}h2{font-size:1.35rem;margin-top:2em}h3{margin-top:0;font-size:1rem}.eyebrow{color:var(--accent);font-weight:750;letter-spacing:.1em;font-size:.8rem;text-transform:uppercase}a{color:var(--accent);text-underline-offset:3px}p{max-width:76ch}.intro{font-size:1.2rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,265px),1fr));gap:18px}.card{border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:22px}pre{overflow-x:auto;padding:16px;border:1px solid var(--line);border-radius:12px;font-size:.86rem}code{font-family:ui-monospace,monospace;overflow-wrap:anywhere}.note{padding:16px 20px;border-left:3px solid var(--accent);background:var(--panel)}footer{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;font-size:.9rem}li{margin:.45em 0}a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+    @media(prefers-color-scheme:dark){:root{color:#ece9ff;background:#111025;--panel:#1b1833;--line:#3b345c;--accent:#ff68be}}@media(max-width:520px){main{padding-top:30px}header{align-items:flex-start;gap:14px}header img{width:64px;height:64px}}
+  </style>
+</head>
+<body><main>
+  <header><img src="assets/logo.svg" alt="WODira" width="96" height="96"><div><span class="eyebrow">Public MCP integration · v1.0.0</span><h1>Your sport.<br>Your connected assistant.</h1></div></header>
+  <p class="intro">Bring WODira events, athlete activity, event operations and box insights into Antigravity and Gemini CLI.</p>
+  <p><a href="https://github.com/WODira-app/wodira-antigravity">Source &amp; full documentation</a> · <a href="https://github.com/WODira-app/wodira-antigravity/blob/main/README.es.md" lang="es">Español</a> · <a href="https://github.com/WODira-app/wodira-antigravity/releases">Releases</a></p>
+  <h2>Install with your client</h2>
+  <div class="grid">
+    <section class="card"><h3>Antigravity</h3><p>Use an updated App, CLI or IDE. Validated with CLI 1.4.10.</p><pre><code>agy plugin install https://github.com/WODira-app/wodira-antigravity</code></pre><p>Enable WODira in Customizations, then authenticate its MCP connection in your client.</p></section>
+    <section class="card"><h3>Gemini CLI</h3><p>Validated with Gemini CLI 0.66.0.</p><pre><code>gemini extensions install https://github.com/WODira-app/wodira-antigravity</code></pre><p>Run <code>/mcp auth wodira</code> in Gemini and complete WODira sign-in. Keep local port 3334 available for the callback.</p></section>
+  </div>
+  <p class="note">Install from GitHub while marketplace review is pending. A partner application is not an approved marketplace listing. Installation does not grant access to your WODira account.</p>
+  <h2>Five focused workflows</h2>
+  <ul>
+    <li><code>/wodira-connect</code> — Sign-in, discovery, account access and troubleshooting.</li>
+    <li><code>/wodira-athlete</code> — Events, registrations, tickets, orders, classes and your sports agenda.</li>
+    <li><code>/wodira-organizer</code> — Select your organization and review event operations and metrics.</li>
+    <li><code>/wodira-box-insights</code> — Compare demand, attendance, occupancy, time slots and activity–coach combinations; export supported reports to PDF.</li>
+    <li><code>/wodira-peak</code> — Review training, readiness, load and wellness, and apply only authorized planning changes.</li>
+  </ul>
+  <p>Available tools depend on the live public catalog, your account permissions and enabled features. Organizer tools require the appropriate role and access; box demand reports additionally require ANALYTICS. PDF presentation depends on your client's file support.</p>
+  <h2>Direct connection, explicit consent</h2>
+  <p>The plugin connects directly to <code>https://api.wodira.app/mcp</code> using OAuth, PKCE and public client metadata. It bundles no API key, client secret or bearer token, and runs no additional MCP proxy or telemetry service. Your host manages sign-in, account consent and token storage.</p>
+  <p>Requested WODira information is returned to your chosen client and can enter its model context and conversation history. Read <a href="https://wodira.app/es/legal/privacy">WODira's privacy policy</a> and your client's privacy policy before requesting private athlete, health or financial data. Actions remain subject to your request, server validations and the host's approvals.</p>
+  <p><a href="oauth/antigravity.json">Antigravity public client metadata</a> · <a href="oauth/gemini.json">Gemini CLI public client metadata</a></p>
+  <footer>WODira · <a href="https://wodira.app">wodira.app</a> · <a href="mailto:info@wodira.app">info@wodira.app</a><br>Source is MIT licensed. WODira's name and logo remain its brand assets.</footer>
+</main></body></html>
