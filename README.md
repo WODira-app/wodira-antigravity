@@ -2,7 +2,7 @@
 
 # WODira for Antigravity and Gemini CLI
 
-Connect your WODira account to discover sports events, review your athlete activity, operate your events and understand demand at your box. This repository packages WODira's **public MCP** for Google Antigravity and Gemini CLI, using each client's native extension format.
+Discover public sports events without signing in. Connect your WODira account when you want to review your athlete activity, operate your events or understand demand at your box. This repository packages WODira's **public MCP** for Google Antigravity and Gemini CLI, using each client's native extension format.
 
 [Español](README.es.md) · [Documentation](https://wodira-app.github.io/wodira-antigravity/) · [WODira](https://wodira.app) · [Support](mailto:info@wodira.app)
 
@@ -16,7 +16,7 @@ Use a current Antigravity client (validated with CLI **1.4.10**):
 agy plugin install https://github.com/WODira-app/wodira-antigravity
 ```
 
-Open Customizations → Installed and enable WODira if needed. Authenticate its MCP server in the host's MCP settings. Installation does not sign you in or grant permission to your account. The server is normally named `wodira_public`.
+Open Customizations → Installed and enable WODira if needed. Search public events immediately, with or without an account. For private account features, authenticate its MCP server in the host's MCP settings. Installation does not sign you in or grant permission to your account. The server is normally named `wodira_public`.
 
 **Marketplace:** [submitted for review on 2026-10-29](MARKETPLACE.md). Submission and approval are separate from GitHub distribution. Until Google accepts the listing, install using the repository URL above; do not assume `wodira@antigravity-plugins-official` is available.
 
@@ -28,7 +28,7 @@ Validated with Gemini CLI **0.66.0**:
 gemini extensions install https://github.com/WODira-app/wodira-antigravity
 ```
 
-Then run `/mcp auth wodira` inside Gemini CLI and complete WODira sign-in and consent in your browser. The configured callback is `http://localhost:3334/oauth/callback`; keep that local port available. Remote/headless machines need a browser-accessible callback on the same machine, or appropriate SSH forwarding. Do not paste access tokens into chat as a workaround.
+Public event search works immediately without login, including official event links and MCP Apps when supported. For private athlete or organizer features, run `/mcp auth wodira` inside Gemini CLI and complete WODira sign-in and consent in your browser. The configured callback is `http://localhost:3334/oauth/callback`; keep that local port available. Remote/headless machines need a browser-accessible callback on the same machine, or appropriate SSH forwarding. Do not paste access tokens into chat as a workaround.
 
 Install using **one** client mechanism per application. Importing the Gemini extension into Antigravity while also installing the native plugin can expose the same server twice.
 
@@ -49,6 +49,7 @@ The live MCP catalog and account permissions determine the available tools. WODi
 ## Authentication and data
 
 - Canonical endpoint: `https://api.wodira.app/mcp` over Streamable HTTP.
+- Public access: connection, tool/resource discovery, `hello`, `search_events`, `athlete_search_upcoming_events`, documentation and static MCP Apps require no login. Search results remain public when signed in; private events and drafts are excluded. Account and organization tools trigger OAuth when needed. Supplied invalid credentials are rejected rather than silently ignored.
 - OAuth discovery: `https://api.wodira.app/.well-known/oauth-protected-resource/mcp`.
 - Public CIMD documents: [Antigravity](https://wodira-app.github.io/wodira-antigravity/oauth/antigravity.json) and [Gemini CLI](https://wodira-app.github.io/wodira-antigravity/oauth/gemini.json). They contain public identifiers, not credentials.
 - Scopes: `openid profile email offline_access organizer:ai`. Organizer tools additionally enforce role, organization access and enabled features. A scope alone does not grant an organizational role. Users review the actual account consent in WODira.
@@ -80,7 +81,7 @@ pnpm check:mcp
 pnpm check:published
 ```
 
-`pnpm check:mcp` reads public discovery metadata and verifies an unauthenticated `401` challenge. `pnpm check:published` verifies hosted CIMD bytes and JSON content types. Optional `node scripts/check-published.mjs --authorize` verifies pre-consent authorization redirects: it can register the public client metadata on WODira, but does not sign in, exchange tokens, grant account access or run business tools.
+`pnpm check:mcp` verifies anonymous connection, both public searches, official links, the MCP App resource and a `401` challenge for a protected account tool. It reads public event data only; it does not sign in or read personal orders. `pnpm check:published` verifies hosted CIMD bytes and JSON content types. Optional `node scripts/check-published.mjs --authorize` verifies pre-consent authorization redirects: it can register the public client metadata on WODira, but does not sign in, exchange tokens, grant account access or run business tools.
 
 The native Antigravity validator is authoritative for its installed version. CLI 1.4.10 loads this native manifest's MCP servers from **`mcp_config.json`**; it warns that `mcp.json` is reserved for the Agent Plugins schema. Gemini reads `gemini-extension.json` and shares `rules/AGENTS.md` as its context file. This preserves one set of usage guidance without duplicate server definitions or ignored root context files.
 

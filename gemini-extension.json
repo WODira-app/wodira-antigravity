@@ -1,6 +1,6 @@
 {
   "name": "wodira",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "WODira sports events, athlete activity, event operations and box analytics through the public MCP.",
   "contextFileName": "rules/AGENTS.md",
   "mcpServers": {

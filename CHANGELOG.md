@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0 — 2026-10-29
+
+- Public event discovery works with and without login, returning official registration links and MCP Apps on supported hosts.
+- Connection and athlete guidance request OAuth only for protected account or organization tools.
+- Live verification covers anonymous connection, both searches, public UI resources and preserved private-tool OAuth challenges.
+
 ## 1.0.0 — 2026-10-29
 
 - Native Antigravity plugin and Gemini CLI extension for WODira's public Streamable HTTP MCP.

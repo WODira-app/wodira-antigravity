@@ -16,7 +16,7 @@ Gemini CLI —validado con 0.66.0—:
 gemini extensions install https://github.com/WODira-app/wodira-antigravity
 ```
 
-Después inicia sesión mediante la autenticación MCP del cliente. En Gemini usa `/mcp auth wodira`; su callback local utiliza el puerto 3334. La instalación no inicia sesión ni concede permisos sobre tu cuenta. No necesitas incluir claves ni tokens en la configuración del plugin.
+Puedes buscar eventos públicos directamente, con o sin sesión, y recibir sus enlaces oficiales de inscripción o la vista MCP Apps si el cliente la admite. Para consultar datos privados o usar funciones de tu cuenta, inicia sesión mediante la autenticación MCP del cliente. En Gemini usa `/mcp auth wodira`; su callback local utiliza el puerto 3334. La instalación no inicia sesión ni concede permisos sobre tu cuenta. No necesitas incluir claves ni tokens en la configuración del plugin.
 
 ## Qué puedes pedir
 

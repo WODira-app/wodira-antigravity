@@ -14,13 +14,13 @@
   </style>
 </head>
 <body><main>
-  <header><img src="assets/logo.svg" alt="WODira" width="96" height="96"><div><span class="eyebrow">Public MCP integration · v1.0.0</span><h1>Your sport.<br>Your connected assistant.</h1></div></header>
+  <header><img src="assets/logo.svg" alt="WODira" width="96" height="96"><div><span class="eyebrow">Public MCP integration · v1.1.0</span><h1>Your sport.<br>Your connected assistant.</h1></div></header>
   <p class="intro">Bring WODira events, athlete activity, event operations and box insights into Antigravity and Gemini CLI.</p>
   <p><a href="https://github.com/WODira-app/wodira-antigravity">Source &amp; full documentation</a> · <a href="https://github.com/WODira-app/wodira-antigravity/blob/main/README.es.md" lang="es">Español</a> · <a href="https://github.com/WODira-app/wodira-antigravity/releases">Releases</a></p>
   <h2>Install with your client</h2>
   <div class="grid">
-    <section class="card"><h3>Antigravity</h3><p>Use an updated App, CLI or IDE. Validated with CLI 1.4.10.</p><pre><code>agy plugin install https://github.com/WODira-app/wodira-antigravity</code></pre><p>Enable WODira in Customizations, then authenticate its MCP connection in your client.</p></section>
-    <section class="card"><h3>Gemini CLI</h3><p>Validated with Gemini CLI 0.66.0.</p><pre><code>gemini extensions install https://github.com/WODira-app/wodira-antigravity</code></pre><p>Run <code>/mcp auth wodira</code> in Gemini and complete WODira sign-in. Keep local port 3334 available for the callback.</p></section>
+    <section class="card"><h3>Antigravity</h3><p>Use an updated App, CLI or IDE. Validated with CLI 1.4.10.</p><pre><code>agy plugin install https://github.com/WODira-app/wodira-antigravity</code></pre><p>Enable WODira in Customizations and search public events without login. Authenticate its MCP connection when you need private account features.</p></section>
+    <section class="card"><h3>Gemini CLI</h3><p>Validated with Gemini CLI 0.66.0.</p><pre><code>gemini extensions install https://github.com/WODira-app/wodira-antigravity</code></pre><p>Search public events with or without login. For private features, run <code>/mcp auth wodira</code> in Gemini and complete WODira sign-in. Keep local port 3334 available for the callback.</p></section>
   </div>
   <p class="note">Install from GitHub while marketplace review is pending. A partner application is not an approved marketplace listing. Installation does not grant access to your WODira account.</p>
   <h2>Five focused workflows</h2>
@@ -33,7 +33,7 @@
   </ul>
   <p>Available tools depend on the live public catalog, your account permissions and enabled features. Organizer tools require the appropriate role and access; box demand reports additionally require ANALYTICS. PDF presentation depends on your client's file support.</p>
   <h2>Direct connection, explicit consent</h2>
-  <p>The plugin connects directly to <code>https://api.wodira.app/mcp</code> using OAuth, PKCE and public client metadata. It bundles no API key, client secret or bearer token, and runs no additional MCP proxy or telemetry service. Your host manages sign-in, account consent and token storage.</p>
+  <p>The plugin connects directly to <code>https://api.wodira.app/mcp</code> without login for public event search, and using OAuth, PKCE and public client metadata for protected features. It bundles no API key, client secret or bearer token, and runs no additional MCP proxy or telemetry service. Your host manages sign-in, account consent and token storage.</p>
   <p>Requested WODira information is returned to your chosen client and can enter its model context and conversation history. Read <a href="https://wodira.app/es/legal/privacy">WODira's privacy policy</a> and your client's privacy policy before requesting private athlete, health or financial data. Actions remain subject to your request, server validations and the host's approvals.</p>
   <p><a href="oauth/antigravity.json">Antigravity public client metadata</a> · <a href="oauth/gemini.json">Gemini CLI public client metadata</a></p>
   <footer>WODira · <a href="https://wodira.app">wodira.app</a> · <a href="mailto:info@wodira.app">info@wodira.app</a><br>Source is MIT licensed. WODira's name and logo remain its brand assets.</footer>

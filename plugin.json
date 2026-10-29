@@ -2,7 +2,7 @@
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "wodira",
   "displayName": "WODira",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Connect to WODira to discover sports events, review athlete activity, manage event operations, and analyze your box through its public MCP.",
   "logo": "assets/logo.svg",
   "suggestedPrompts": [
@@ -10,9 +10,21 @@
     "Review my event registrations and operational metrics.",
     "Compare my box's busiest classes, times and activity–coach combinations."
   ],
-  "author": { "name": "WODira", "url": "https://wodira.app" },
+  "author": {
+    "name": "WODira",
+    "url": "https://wodira.app"
+  },
   "homepage": "https://wodira-app.github.io/wodira-antigravity/",
   "repository": "https://github.com/WODira-app/wodira-antigravity",
   "license": "MIT",
-  "keywords": ["wodira", "sports", "events", "fitness", "boxes", "training", "analytics", "mcp"]
+  "keywords": [
+    "wodira",
+    "sports",
+    "events",
+    "fitness",
+    "boxes",
+    "training",
+    "analytics",
+    "mcp"
+  ]
 }
