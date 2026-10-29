@@ -18,7 +18,7 @@ agy plugin install https://github.com/WODira-app/wodira-antigravity
 
 Open Customizations → Installed and enable WODira if needed. Authenticate its MCP server in the host's MCP settings. Installation does not sign you in or grant permission to your account. The server is normally named `wodira_public`.
 
-**Marketplace:** submission and approval are separate from GitHub distribution. Until Google accepts the listing, install using the repository URL above; do not assume `wodira@antigravity-plugins-official` is available.
+**Marketplace:** [submitted for review on 2026-10-29](MARKETPLACE.md). Submission and approval are separate from GitHub distribution. Until Google accepts the listing, install using the repository URL above; do not assume `wodira@antigravity-plugins-official` is available.
 
 ### Gemini CLI
 
